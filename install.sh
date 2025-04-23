@@ -56,7 +56,7 @@ ask_to_save() {
 # 函数：从 GitHub 获取最新版本并动态生成下载链接
 get_download_links() {
     echo -e "\033[36m正在从 GitHub 获取最新版本信息...\033[0m"
-    BASE_URL="https://api.github.com/repos/byJoey/Actions-bbr-v3/releases"
+    BASE_URL="https://github.com/xinwys/bbr-v3/releases"
     RELEASE_DATA=$(curl -s "$BASE_URL")
     
     # 根据系统架构选择版本，并按照发布时间排序（最新的在前），取最新的一个版本
@@ -109,7 +109,7 @@ echo -e "\033[36m当前 TCP 拥塞控制算法：\033[0m\033[1;32m$CURRENT_ALGO\
 echo -e "\033[36m当前队列管理算法：\033[0m\033[1;32m$CURRENT_QDISC\033[0m"
 print_separator
 # 显示作者信息及实际地址
-echo -e "\033[1;33m作者：Joey  |  博客：https://joeyblog.net  |  反馈群组：https://t.me/+ft-zI76oovgwNmRh\033[0m"
+echo -e "\033[1;33m作者：xin  |  官网：https://www.199520.xyz  | \033[0m"
 print_separator
 
 # 提示用户选择操作
@@ -127,7 +127,7 @@ read -r ACTION
 case "$ACTION" in
     1)
         echo -e "\033[1;32m٩(｡•́‿•̀｡)۶ 您选择了安装或更新 BBR v3！\033[0m"
-        sudo apt remove --purge $(dpkg -l | grep "joeyblog" | awk '{print $2}') -y
+        sudo apt remove --purge $(dpkg -l | grep "xinblog" | awk '{print $2}') -y
         get_download_links
         install_packages
         ;;
